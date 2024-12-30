@@ -31,3 +31,7 @@ Route::get('/register', function () {
     return view('register'); // Mengarah ke resources/views/index.blade.php
 });
 
+Route::get('/home', function () {
+    return view('home'); // Mengarah ke resources/views/index.blade.php
+});
+
