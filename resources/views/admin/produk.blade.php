@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
+    <title>HomeAdmin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
     <style>
@@ -15,7 +15,7 @@
 
         .sidebar {
             width: 250px;
-            background: linear-gradient(180deg, #3b82f6, #2563eb);
+            background: linear-gradient(180deg,  #364351, #475666);
             height: 100vh;
             position: fixed;
             top: 0;
@@ -89,23 +89,39 @@
 </head>
 <body>
     <div class="sidebar">
-        <h2>CARSTORE ADMIN</h2>
-        <a href="#">Dashboard</a>
-        <a href="#">Produk</a>
-        <a href="#">Pembelian</a>
-        <a href="#">Pelanggan</a>
-        <a href="#">Logout</a>
+        <h2>Material Store ADMIN</h2>
+        <a href="/admin/home">Dashboard</a>
+        <a href="/admin/produk">Produk</a>
+        <a href="/admin/pembelian">Pembelian</a>
+        <a href="/admin/pelanggan">Pelanggan</a>
+        <a href="/admin/logout">Logout</a>
     </div>
+        <div class="content">
+            <div class="search-bar">
+                <input type="text" placeholder="Search for...">
+                <button>🔍</button>
+            </div>
 
-    <div class="content">
-        <div class="search-bar">
-            <input type="text" placeholder="Search for...">
-            <button>🔍</button>
+            <h2>Data Produk</h2>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>no</th>
+                        <th>Nama</th>
+                        <th>Harga</th>
+                        <th>Tahun Produksi</th>
+                        <th>Foto</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+            <a href="index.php?halaman=tambahproduk" class="btn btn-primary">Tambah Data</a>
         </div>
-
-        <div class="welcome">Selamat Datang Administrator</div>
-
-        <div class="footer">Copyright © Your Website 2021</div>
-    </div>
 </body>
 </html>
+
+

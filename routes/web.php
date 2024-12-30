@@ -31,7 +31,23 @@ Route::get('/register', function () {
     return view('register'); // Mengarah ke resources/views/index.blade.php
 });
 
-Route::get('/home', function () {
-    return view('home'); // Mengarah ke resources/views/index.blade.php
+Route::get('/admin/home', function () {
+    return view('admin/home'); // Mengarah ke resources/views/index.blade.php
+});
+
+Route::get('/admin/produk', function () {
+    return view('admin/produk'); // Mengarah ke resources/views/index.blade.php
+});
+
+Route::get('/admin/pembelian', function () {
+    return view('admin/pembelian'); // Mengarah ke resources/views/index.blade.php
+});
+
+Route::get('/admin/pelanggan', function () {
+    return view('admin/pelanggan'); // Mengarah ke resources/views/index.blade.php
+});
+
+Route::get('/admin/logout', function () {
+    return view('admin/logout'); // Mengarah ke resources/views/index.blade.php
 });
 

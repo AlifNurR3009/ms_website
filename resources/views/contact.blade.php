@@ -31,10 +31,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/login">
-                                <img src="image/LOGIN.jpg" alt="Login" style="height: 30px;"> 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="image/LOGIN.jpg" alt="Login" style="height: 30px;">
                             </a>
+                            <ul class="dropdown-menu" aria-labelledby="loginDropdown">
+                                <li><a class="dropdown-item" href="/login">Login User</a></li>
+                                <li><a class="dropdown-item" href="/admin/home">Login Admin</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
