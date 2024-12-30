@@ -1,0 +1,56 @@
+.warna {
+    background-color: #007BFF; /* Warna biru */
+}
+.navbar-nav .nav-link {
+    color: white !important;
+}
+.navbar-nav .nav-link:hover {
+    color: #7ef1b8 !important;
+}
+.card {
+    border: 2px solid #ddd; /* Border untuk setiap item */
+    border-radius: 10px; /* Membuat sudut border melengkung */
+    padding: 15px; /* Spasi di dalam border */
+    margin-bottom: 20px; /* Jarak antar grid item */
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.card img {
+    width: 100%;
+    max-width: 150px; /* Ukuran maksimal lebar gambar */
+    max-height: 150px; /* Ukuran maksimal tinggi gambar */
+    height: auto; /* Tetap menjaga rasio gambar */
+    border-radius: 10px;
+}
+
+.card h5 {
+    text-align: left;
+    margin-top: 10px;
+}
+.btn-primary {
+    background-color: black;
+    border-color: rgb(70, 65, 65);
+    color: white
+}
+
+.btn-primary:hover {
+    background-color: #007BFF;
+    border-color: palevioletred;
+}
+.footer {
+    background-color: #007BFF; 
+    color: white;
+    padding: 20px 0;
+}
+
+.footer p, .footer a {
+    color: white;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
