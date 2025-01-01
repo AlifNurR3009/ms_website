@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -50,4 +51,13 @@ Route::get('/admin/pelanggan', function () {
 Route::get('/admin/logout', function () {
     return view('admin/logout'); // Mengarah ke resources/views/index.blade.php
 });
+
+
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/', function () {
+    return view('index'); // Ganti 'home' dengan nama view yang sesuai
+})->name('home'); // Beri nama pada rute
 

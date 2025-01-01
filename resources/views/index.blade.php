@@ -36,8 +36,19 @@
                                 <img src="image/LOGIN.jpg" alt="Login" style="height: 30px;">
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="loginDropdown">
-                                <li><a class="dropdown-item" href="/login">Login User</a></li>
-                                <li><a class="dropdown-item" href="/admin/home">Login Admin</a></li>
+                                <nav>
+                                    @if(session('logged_user'))
+                                    <p>Welcome, {{ session('logged_user')->nama_pelanggan }}</p>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit">Logout</button>
+                                    </form>
+                                </nav>
+                            @else
+                                <nav>
+                                    <li><a class="dropdown-item" href="/login">Login User</a></li>
+                                </nav>
+                            @endif
                             </ul>
                         </li>
                     </ul>
@@ -45,6 +56,8 @@
             </div>
         </nav>
     
+
+
         <!-- Konten Utama -->
         <div class="container">
             <div class="row">
@@ -229,6 +242,17 @@
         });
     </script>
     
+        <!-- Footer -->
+        @if(session('logged_user'))
+        <div class="container-fluid footer">
+            <footer class="container text-center">
+                <p>Email: <a href="mailto:info@materialbuilding.com">info@materialbuilding.com</a></p>
+                <p>Alamat: Jl. Raya Material No. 123, Jakarta</p>
+                <p>&copy; 2024 Material Building. All rights reserved.</p>
+        </div>
+    
+    </footer>    
+    @else
     <div class="container-fluid footer">
         <footer class="container text-center">
             <p>Email: <a href="mailto:info@materialbuilding.com">info@materialbuilding.com</a></p>
@@ -237,6 +261,8 @@
     </div>
 
 </footer>
+
+    @endif
 
 </body>
 </html>
