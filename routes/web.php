@@ -61,3 +61,5 @@ Route::get('/', function () {
     return view('index'); // Ganti 'home' dengan nama view yang sesuai
 })->name('home'); // Beri nama pada rute
 
+Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
+Route::post('/register', [AuthController::class, 'register'])->name('register');

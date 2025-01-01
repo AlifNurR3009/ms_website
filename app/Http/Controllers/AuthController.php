@@ -39,4 +39,34 @@ class AuthController extends Controller
         session()->forget('logged_user');
         return redirect()->route('home')->with('success', 'Berhasil logout!');
     }
+
+    // Menampilkan halaman register
+    public function showRegisterForm()
+    {
+        return view('register'); // Buat file register.blade.php di folder resources/views
+    }
+
+    // Proses register
+    public function register(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'email_pelanggan' => 'required|email|unique:pelanggan,email_pelanggan',
+            'password_pelanggan' => 'required|min:6|confirmed',
+            'nama_pelanggan' => 'required',
+            'alamat' => 'required',
+            'nomer_telp' => 'required|digits_between:10,15',
+        ]);
+
+        // Simpan data pelanggan ke database
+        Pelanggan::create([
+            'email_pelanggan' => $request->email_pelanggan,
+            'password_pelanggan' => $request->password_pelanggan, // Simpan langsung (tanpa hashing)
+            'nama_pelanggan' => $request->nama_pelanggan,
+            'alamat' => $request->alamat,
+            'nomer_telp' => $request->nomer_telp,
+        ]);
+
+        return redirect()->route('login')->with('success', 'Berhasil mendaftar, silakan login!');
+    }
 }

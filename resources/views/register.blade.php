@@ -8,31 +8,38 @@
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="form-container">
-            <h2 class="text-center">Register</h2>
-            <form onsubmit="return validateRegister()">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="name" placeholder="Your Username" required>
-                </div>
-                <div class="mb-3">
-                    <label for="register-email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="register-email" placeholder="Enter your email" required>
-                    <div class="invalid-feedback">Please enter a valid email address with '@' and '.com'.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="register-password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="register-password" placeholder="Enter your password" required>
-                    <div class="invalid-feedback">Please enter your password.</div>
-                </div>
-                <button type="submit" class="btn btn-custom w-100">Register</button>
-                <div class="mt-3 text-center">
-                    <a href="login.html" class="text-decoration-none">Already have an account? Login</a>
-                </div>
-            </form>
+    <h1>Register</h1>
+    @if ($errors->any())
+        <div>
+            @foreach ($errors->all() as $error)
+                <p style="color: red;">{{ $error }}</p>
+            @endforeach
         </div>
-    </div>
+    @endif
+
+    <form action="{{ route('register') }}" method="POST">
+        @csrf
+
+        <label>Nama:</label>
+        <input type="text" name="nama_pelanggan" value="{{ old('nama_pelanggan') }}" required><br>
+
+        <label>Email:</label>
+        <input type="email" name="email_pelanggan" value="{{ old('email_pelanggan') }}" required><br>
+
+        <label>Password:</label>
+        <input type="password" name="password_pelanggan" required><br>
+
+        <label>Konfirmasi Password:</label>
+        <input type="password" name="password_pelanggan_confirmation" required><br>
+
+        <label>Alamat:</label>
+        <textarea name="alamat" required>{{ old('alamat') }}</textarea><br>
+
+        <label>Nomor Telepon:</label>
+        <input type="text" name="nomer_telp" value="{{ old('nomer_telp') }}" required><br>
+
+        <button type="submit">Register</button>
+    </form>
 
     <script>
         function validateRegister() {

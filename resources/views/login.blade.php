@@ -18,5 +18,11 @@
         <br>
         <button type="submit">Login</button>
     </form>
+
+    <p>Belum punya akun?</p>
+    <a href="{{ route('register') }}">
+        <button type="button">Register</button>
+    </a>
+
 </body>
 </html>
