@@ -1,45 +1,40 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-/* Responsive background image styling */
+/* Latar belakang halaman */
 body {
-    background-image: url('image/loginimage.jpg'); /* Replace with your image URL */
+    background: url('/image/wllppr3.jpg') no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.container {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    padding: 15px; /* Ensures form is not too close to edges on small screens */
+    margin: 0;
 }
 
-.form-container {
-    max-width: 400px;
-    width: 100%; /* Makes form responsive on small screens */
+/* Gaya untuk container form */
+.login-card {
+    background: rgba(0, 0, 0, 0.8); /* Transparansi */
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background for better readability */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.btn-custom {
-    background-color: #007BFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     color: white;
+    width: 100%;
+    max-width: 400px;
 }
 
-.btn-custom:hover {
-    background-color: #0056b3;
+/* Gaya untuk heading */
+.login-card h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* Media query for smaller screens */
-@media (max-width: 576px) {
-    .form-container {
-        padding: 20px;
-    }
+/* Link register */
+.login-card a {
+    text-decoration: none;
+    color: #0d6efd;
+}
+
+.login-card a:hover {
+    color: #0056b3;
+    text-decoration: underline;
 }

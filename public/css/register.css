@@ -1,45 +1,72 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-/* Background image styling */
+/* Apply background image and styling */
 body {
-    background-image: url('image/loginimage.jpg'); /* Replace with your image URL */
+    background: url('/image/wllppr3.jpg') no-repeat center center fixed;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    height: 100vh;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
 }
 
+/* Center the form */
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    padding: 15px;
+    height: 100vh;
+    padding: 20px;
 }
 
-.form-container {
-    max-width: 400px;
-    width: 100%; /* Makes form responsive */
+/* Style for the registration form */
+form {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background for readability */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
 }
 
-.btn-custom {
-    background-color: #007BFF;
-    color: white;
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
-.btn-custom:hover {
+/* Style the input fields */
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
     background-color: #0056b3;
 }
 
-/* Media query for small screens */
+/* Error message styling */
+div {
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
 @media (max-width: 576px) {
-    .form-container {
-        padding: 20px;
+    form {
+        width: 90%;
     }
 }
