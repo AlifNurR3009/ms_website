@@ -88,6 +88,18 @@
     </style>
 </head>
 <body>
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     <div class="sidebar">
         <h2>Material Store ADMIN</h2>
         <a href="/admin/home">Dashboard</a>
@@ -115,8 +127,20 @@
                 </tr>
             </thead>
             <tbody>
-                
+                @foreach($pelanggan as $index => $item)
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $item->nama_pelanggan }}</td>
+                    <td>{{ $item->email_pelanggan }}</td>
+                    <td>{{ $item->nomer_telp }}</td>
+                    <td>
+                        <a href="/admin/pelanggan/edit/{{ $item->id_pelanggan }}" class="btn btn-warning">Edit</a>
+                        <a href="/admin/pelanggan/delete/{{ $item->id_pelanggan }}" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')">Hapus</a>
+                    </td>
+                </tr>
+                @endforeach
             </tbody>
+            
         </table>
     </div>
 </body>

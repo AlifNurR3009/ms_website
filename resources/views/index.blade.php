@@ -47,6 +47,7 @@
                             @else
                                 <nav>
                                     <li><a class="dropdown-item" href="/login">Login user</a></li>
+                                    <li><a class="dropdown-item" href="/admin/login">Login Admin</a></li>
                                 </nav>
                             @endif
                             </ul>

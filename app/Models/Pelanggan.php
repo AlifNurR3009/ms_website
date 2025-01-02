@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,9 +9,8 @@ class Pelanggan extends Model
 {
     use HasFactory;
 
-    protected $table = 'pelanggan'; // Pastikan nama tabel sesuai dengan database Anda
+    protected $table = 'pelanggan';
     protected $primaryKey = 'id_pelanggan';
-    public $timestamps = false;
 
     protected $fillable = [
         'email_pelanggan',
@@ -19,4 +19,9 @@ class Pelanggan extends Model
         'alamat',
         'nomer_telp',
     ];
+
+    // Nonaktifkan timestamps
+    public $timestamps = false;
 }
+
+

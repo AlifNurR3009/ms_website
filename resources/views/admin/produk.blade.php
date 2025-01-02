@@ -96,31 +96,54 @@
         <a href="/admin/pelanggan">Pelanggan</a>
         <a href="/admin/logout">Logout</a>
     </div>
-        <div class="content">
-            <div class="search-bar">
-                <input type="text" placeholder="Search for...">
-                <button>🔍</button>
-            </div>
-
-            <h2>Data Produk</h2>
-
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>no</th>
-                        <th>Nama</th>
-                        <th>Harga</th>
-                        <th>Tahun Produksi</th>
-                        <th>Foto</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
-            <a href="index.php?halaman=tambahproduk" class="btn btn-primary">Tambah Data</a>
+    <div class="content">
+        <div class="search-bar">
+            <input type="text" placeholder="Search for...">
+            <button>🔍</button>
         </div>
+    
+        <h2>Data Produk</h2>
+    
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Harga</th>
+                    <th>Stok</th>
+                    <th>Foto</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($produk as $index => $item)
+                <tr>
+                    <td>{{ $index + 1 }}</td>
+                    <td>{{ $item->nama_produk }}</td>
+                    <td>Rp {{ number_format($item->harga_produk, 2, ',', '.') }}</td>
+                    <td>{{ $item->stok_produk }}</td>
+                    <td>
+                        @if ($item->gambar_produk)
+                            <img src="{{ asset('storage/' . $item->gambar_produk) }}" alt="Gambar Produk" style="width: 100px; height: auto;">
+                        @else
+                            Tidak Ada Gambar
+                        @endif
+                    </td>
+                    <td>
+                        <a href="{{ route('admin.produk.edit', $item->id_produk) }}" class="btn btn-warning">Edit</a>
+                        <form action="{{ route('admin.produk.destroy', $item->id_produk) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    
+        <a href="{{ route('admin.produk.create') }}" class="btn btn-primary">Tambah Data</a>
+    </div>
 </body>
 </html>
 
