@@ -107,7 +107,6 @@
                         <a 
                             class="btn btn-primary beli-sekarang" 
                             href="form-pembelian.html" 
-                            data-image="image/produk1.jpeg" 
                             data-name="Sikagrout 215">Beli Sekarang</a>
                     </div>
                 </div>
@@ -118,7 +117,6 @@
                         <p><b>Rp. 650,000,-</b></p>
                         <a class="btn btn-primary beli-sekarang" 
                         href="form-pembelian.html" 
-                        data-image="image/produk2.jpeg" 
                         data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
@@ -127,49 +125,62 @@
                         <img src="image/produk3.jpeg" alt="Produk 3" class="img-fluid">
                         <h5>SikaCim Accelerator 900ml</h5>
                         <p><b>Rp. 35,000,-</b></p>
-                        <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
+                        <a class="btn btn-primary beli-sekarang" 
+                        href="form-pembelian.html" 
+                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="product-item">
                         <img src="image/produk4.jpeg" alt="Produk 4" class="img-fluid">
-                        <h5>Sikamen LN 20KG</h5>
+                        <h5>Sikamen LN 20KGl</h5>
                         <p><b>Rp. 460,000,-</b></p>
-                        <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
+                        <a class="btn btn-primary beli-sekarang" 
+                        href="form-pembelian.html" 
+                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="product-item">
                         <img src="image/produk5.jpeg" alt="Produk 5" class="img-fluid">
-                        <h5>Ultrachem Membrane</h5>
+                        <h5>Sikamen LN 20KGl</h5>
                         <p><b>Rp. 645,000,-</b></p>
-                        <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
+                        <a class="btn btn-primary beli-sekarang" 
+                        href="form-pembelian.html" 
+                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="product-item">
-                        <img src="image/produk6.jpeg" alt="Produk 6" class="img-fluid">
+                        <img src="image/produk6.jpeg" alt="Produk 5" class="img-fluid">
                         <h5>Sika Skim Coat</h5>
                         <p><b>Rp. 69,000,-</b></p>
-                        <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
+                        <a class="btn btn-primary beli-sekarang" 
+                        href="form-pembelian.html" 
+                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="product-item">
-                        <img src="image/produk7.jpeg" alt="Produk 7" class="img-fluid">
+                        <img src="image/produk7.jpeg" alt="Produk 5" class="img-fluid">
                         <h5>Torcing Biasa (Bitumi)</h5>
                         <p><b>Rp. 522,000,-</b></p>
-                        <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
+                        <a class="btn btn-primary beli-sekarang" 
+                        href="form-pembelian.html" 
+                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
                     <div class="product-item">
-                        <img src="image/produk8.jpeg" alt="Produk 8" class="img-fluid">
+                        <img src="image/produk8.jpeg" alt="Produk 5" class="img-fluid">
                         <h5>Pentens FLESEAL T-200H</h5>
                         <p><b>Rp. 1,200,000,-</b></p>
-                        <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
+                        <a class="btn btn-primary beli-sekarang" 
+                        href="form-pembelian.html" 
+                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
+
             <!-- Image Holder Section -->
           <!-- Image Holder Section -->
             <div class="row fade-in">
@@ -240,6 +251,33 @@
                 window.location.href = purchaseUrl;
             });
         });
+        // Periksa apakah pengguna sudah login (nilai ini di-set dari server-side menggunakan session atau variabel lain)
+        const isLoggedIn = @json(session('logged_user') !== null);
+
+        // Menambahkan event listener untuk tombol "Beli Sekarang"
+        document.body.addEventListener('click', event => {
+            if (event.target.classList.contains('beli-sekarang')) {
+                event.preventDefault(); // Mencegah aksi default
+
+                // Jika pengguna belum login, tampilkan alert dan arahkan ke halaman login
+                if (!isLoggedIn) {
+                    alert('Silakan login terlebih dahulu sebelum melakukan pembelian.');
+                    window.location.href = '/login'; // Arahkan ke halaman login
+                    return; // Hentikan proses lebih lanjut
+                }
+
+                // Ambil data produk
+                const imageSrc = event.target.dataset.image;
+                const productName = event.target.dataset.name;
+
+                // Buat URL dengan query parameter
+                const purchaseUrl = `${event.target.getAttribute('href')}?image=${encodeURIComponent(imageSrc)}&name=${encodeURIComponent(productName)}`;
+
+                // Jika sudah login, langsung arahkan ke halaman formulir pembelian
+                window.location.href = '/formpembelian';
+            }
+        });
+
     </script>
     
         <!-- Footer -->

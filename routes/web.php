@@ -63,3 +63,10 @@ Route::get('/', function () {
 
 Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+Route::get('/formpembelian', function () {
+    return view('/formpembelian'); 
+});
+
+
+
