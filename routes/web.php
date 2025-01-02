@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\PembelianController;
+
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -14,9 +16,7 @@ Route::get('/index', function () {
     return view('index'); // Mengarah ke resources/views/index.blade.php
 });
 
-Route::get('/product', function () {
-    return view('product'); // Mengarah ke resources/views/index.blade.php
-});
+Route::get('/product', [ProdukController::class, 'add'])->name('');
 
 Route::get('/about', function () {
     return view('about'); // Mengarah ke resources/views/index.blade.php
@@ -43,9 +43,9 @@ Route::get('/admin/produk', function () {
     return view('admin/produk'); // Mengarah ke resources/views/index.blade.php
 });
 
-Route::get('/admin/pembelian', function () {
-    return view('admin/pembelian'); // Mengarah ke resources/views/index.blade.php
-});
+// Route::get('/admin/pembelian', function () {
+//     return view('admin/pembelian'); // Mengarah ke resources/views/index.blade.php
+// });
 
 Route::get('/admin/pelanggan', function () {
     return view('admin/pelanggan'); // Mengarah ke resources/views/index.blade.php
@@ -93,6 +93,14 @@ Route::get('/admin/produk/{id}/edit', [ProdukController::class, 'edit'])->name('
 Route::put('/admin/produk/{id}', [ProdukController::class, 'update'])->name('admin.produk.update');
 
 Route::delete('/admin/produk/{id}', [ProdukController::class, 'destroy'])->name('admin.produk.destroy');
+
+
+Route::get('pembelian/{id}', [PembelianController::class, 'create'])->name('pembelian.create');
+Route::post('pembelian', [PembelianController::class, 'store'])->name('pembelian.store');
+
+Route::get('/admin/pembelian', [ProdukController::class, 'tampilkan'])->name('');
+
+
 
 
 

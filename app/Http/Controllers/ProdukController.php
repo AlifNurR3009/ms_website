@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Produk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProdukController extends Controller
 {
@@ -94,6 +95,30 @@ class ProdukController extends Controller
 
         return redirect()->route('admin.produk')->with('success', 'Produk berhasil dihapus.');
     }
+    public function add()
+{
+    $produk = Produk::all(); // atau gunakan query sesuai kebutuhan
+    return view('product', compact('produk'));
+}
+
+    public function tampilkan()
+    {
+        $dataPembelian = DB::table('pembelian')
+            ->join('pelanggan', 'pembelian.id_pelanggan', '=', 'pelanggan.id_pelanggan')
+            ->join('produk', 'pembelian.id_produk', '=', 'produk.id_produk')
+            ->select(
+                'pembelian.id_pembelian',
+                'pelanggan.nama_pelanggan',
+                'produk.nama_produk',
+                'pembelian.tanggal_pembelian',
+                'pembelian.total_harga',
+            )
+            ->get();
+
+        return view('admin.pembelian', compact('dataPembelian'));
+    }
+
+    
 }
 
 

@@ -101,169 +101,19 @@
 
         <!-- Grid Gambar -->
         <div class="row row-cols-2 row-cols-md-4 g-4">
-            <!-- Gambar 1 - 20 -->
+            @foreach ($produk as $item)
             <div class="col">
                 <div class="card h-100">
-                    <img src="image/card1.jpeg" class="card-img-top" alt="Image 1">
-                    <h5>Fosroc Membran Tempel</h5>
-                    <p><b>Rp. 1,850,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
+                    <!-- Menampilkan gambar produk jika ada, jika tidak tampilkan placeholder -->
+                    <img src="{{ $item->gambar_produk ? asset('storage/' . $item->gambar_produk) : 'path_to_placeholder_image.jpg' }}" class="card-img-top" alt="{{ $item->nama_produk }}">
+                    <h5>{{ $item->nama_produk }}</h5>
+                    <p><b>Rp. {{ number_format($item->harga_produk, 0, ',', '.') }}</b></p>
+                    <a class="btn btn-primary" href="{{ route('pembelian.create', $item->id_produk) }}" role="button">Beli Sekarang</a>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card2.jpeg" class="card-img-top" alt="Image 2">
-                    <h5>Spider P SA 3,5 KG</h5>
-                    <p><b>Rp. 1,350,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card3.jpeg" class="card-img-top" alt="Image 3">
-                    <h5>Spider P SA 1,5 Mm</h5>
-                    <p><b>Rp. 1,550,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card4.jpeg" class="card-img-top" alt="Image 4">
-                    <h5>Sikabit Pro P-30 Grey</h5>
-                    <p><b>Rp. 900,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card5.jpeg" class="card-img-top" alt="Image 5">
-                    <h5>Primer Fosroc Nitoproof 30</h5>
-                    <p><b>Rp. 735,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card6.jpeg" class="card-img-top" alt="Image 6">
-                    <h5>Membrane Brai Granulle</h5>
-                    <p><b>Rp. 750,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card7.jpeg" class="card-img-top" alt="Image 7">
-                    <h5>ITLS Plura</h5>
-                    <p><b>Rp. 900,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card8.jpeg" class="card-img-top" alt="Image 8">
-                    <h5>Fosroc Proofex</h5>
-                    <p><b>Rp. 680,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card9.jpeg" class="card-img-top" alt="Image 9">
-                    <h5>BASF Green 4mm</h5>
-                    <p><b>Rp. 1,400,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card10.jpeg" class="card-img-top" alt="Image 10">
-                    <h5>Casali Grey 3mm</h5>
-                    <p><b>Rp. 700,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card11.jpeg" class="card-img-top" alt="Image 11">
-                    <h5>Awazel Superseal sand</h5>
-                    <p><b>Rp. 550,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card12.jpeg" class="card-img-top" alt="Image 12">
-                    <h5>Thinner HG</h5>
-                    <p><b>Rp. 45,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card13.jpeg" class="card-img-top" alt="Image 13">
-                    <h5>Talk Powder @40KG</h5>
-                    <p><b>Rp. 125,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card14.jpeg" class="card-img-top" alt="Image 14">
-                    <h5>Fosroc Nitoflor Hardtop</h5>
-                    <p><b>Rp. 115,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card15.jpeg" class="card-img-top" alt="Image 15">
-                    <h5>Epoxy Finish Coating</h5>
-                    <p><b>Rp. 2,700,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card16.jpeg" class="card-img-top" alt="Image 16">
-                    <h5>Sika Floor 81 Epocem</h5>
-                    <p><b>Rp. 900,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card17.jpeg" class="card-img-top" alt="Image 17">
-                    <h5>Serat Viselin Tissue</h5>
-                    <p><b>Rp. 900,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card18.jpeg" class="card-img-top" alt="Image 18">
-                    <h5>Pantens T305TH</h5>
-                    <p><b>Rp. 520,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card19.jpeg" class="card-img-top" alt="Image 19">
-                    <h5>Pantens T-200H White</h5>
-                    <p><b>Rp. 1,650,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100">
-                    <img src="image/card20.jpeg" class="card-img-top" alt="Image 20">
-                    <h5>Pantens PU300</h5>
-                    <p><b>Rp. 4,500,000,-</b></p>
-                    <a class="btn btn-primary" href="#" role="button">Beli Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </div>
+            @endforeach
+        </div>        
+            
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>

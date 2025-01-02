@@ -11,15 +11,15 @@ return new class extends Migration
      */
     public function up()
 {
-    // Schema::create('pelanggan', function (Blueprint $table) {
-    //     $table->id('id_pelanggan');
-    //     $table->string('email_pelanggan')->unique();
-    //     $table->string('password_pelanggan');
-    //     $table->string('nama_pelanggan');
-    //     $table->text('alamat');
-    //     $table->string('nomer_telp');
-    //     $table->timestamps();
-    // });
+    Schema::create('pelanggan', function (Blueprint $table) {
+        $table->id('id_pelanggan');
+        $table->string('email_pelanggan')->unique();
+        $table->string('password_pelanggan');
+        $table->string('nama_pelanggan');
+        $table->text('alamat');
+        $table->string('nomer_telp');
+        $table->timestamps();
+    });
 }
 
 

@@ -10,7 +10,7 @@
 <body>
 
 <div class="container mt-5">
-  <h2>Form Pembelian</h2>
+  <h2 class="text-center">Form Pembelian</h2>
   <form id="formPembelian">
     <!-- Nama Pelanggan -->
     <div class="mb-3">

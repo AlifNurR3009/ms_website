@@ -103,21 +103,30 @@
             <button>🔍</button>
         </div>
         <h2>Data Pembelian</h2>
-
+    
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th>no</th>
+                    <th>No</th>
                     <th>Nama Pelanggan</th>
+                    <th>Nama Produk</th>
                     <th>Tanggal</th>
-                    <th>Total</th>
-                    <th>Aksi</th>
+                    <th>Harga</th>
                 </tr>
             </thead>
             <tbody>
-
+                @foreach ($dataPembelian as $index => $item)
+                    <tr>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $item->nama_pelanggan }}</td>
+                        <td>{{ $item->nama_produk }}</td>
+                        <td>{{ \Carbon\Carbon::parse($item->tanggal_pembelian)->format('d-m-Y H:i') }}</td>
+                        <td>Rp. {{ number_format($item->total_harga, 0, ',', '.') }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
+    
 </body>
 </html>
