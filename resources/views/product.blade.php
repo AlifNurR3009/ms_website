@@ -48,6 +48,7 @@
                             @else
                                 <nav>
                                     <li><a class="dropdown-item" href="/login">Login User</a></li>
+                                    <li><a class="dropdown-item" href="/admin/login">Login Admin</a></li>
                                 </nav>
                             @endif
                             </ul>
@@ -147,7 +148,6 @@
             return false;
         }
     </script>
-
                <!-- Footer -->
                @if(session('logged_user'))
                <div class="container-fluid footer">

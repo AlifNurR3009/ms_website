@@ -10,7 +10,7 @@ class Pembelian extends Model
 
     protected $primaryKey = 'id_pembelian';
 
-    protected $fillable = ['id_pelanggan', 'id_produk', 'tanggal_pembelian', 'total_harga', 'status_pembelian'];
+    protected $fillable = ['id_pelanggan', 'id_produk', 'tanggal_pembelian', 'total_harga', ];
 
     public $timestamps = false;
 }

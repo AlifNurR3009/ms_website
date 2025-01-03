@@ -105,10 +105,6 @@
                         <img src="image/produk1.jpeg" alt="Produk 1" class="img-fluid">
                         <h5>Sikagrout 215</h5>
                         <p><b>Rp. 153,000,-</b></p>
-                        <a 
-                            class="btn btn-primary beli-sekarang" 
-                            href="form-pembelian.html" 
-                            data-name="Sikagrout 215">Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
@@ -116,9 +112,6 @@
                         <img src="image/produk2.jpeg" alt="Produk 2" class="img-fluid">
                         <h5>Fosroc Integral Conplast</h5>
                         <p><b>Rp. 650,000,-</b></p>
-                        <a class="btn btn-primary beli-sekarang" 
-                        href="form-pembelian.html" 
-                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
@@ -126,9 +119,6 @@
                         <img src="image/produk3.jpeg" alt="Produk 3" class="img-fluid">
                         <h5>SikaCim Accelerator 900ml</h5>
                         <p><b>Rp. 35,000,-</b></p>
-                        <a class="btn btn-primary beli-sekarang" 
-                        href="form-pembelian.html" 
-                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
@@ -136,9 +126,6 @@
                         <img src="image/produk4.jpeg" alt="Produk 4" class="img-fluid">
                         <h5>Sikamen LN 20KGl</h5>
                         <p><b>Rp. 460,000,-</b></p>
-                        <a class="btn btn-primary beli-sekarang" 
-                        href="form-pembelian.html" 
-                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
@@ -146,9 +133,6 @@
                         <img src="image/produk5.jpeg" alt="Produk 5" class="img-fluid">
                         <h5>Sikamen LN 20KGl</h5>
                         <p><b>Rp. 645,000,-</b></p>
-                        <a class="btn btn-primary beli-sekarang" 
-                        href="form-pembelian.html" 
-                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
@@ -156,9 +140,6 @@
                         <img src="image/produk6.jpeg" alt="Produk 5" class="img-fluid">
                         <h5>Sika Skim Coat</h5>
                         <p><b>Rp. 69,000,-</b></p>
-                        <a class="btn btn-primary beli-sekarang" 
-                        href="form-pembelian.html" 
-                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
@@ -166,9 +147,6 @@
                         <img src="image/produk7.jpeg" alt="Produk 5" class="img-fluid">
                         <h5>Torcing Biasa (Bitumi)</h5>
                         <p><b>Rp. 522,000,-</b></p>
-                        <a class="btn btn-primary beli-sekarang" 
-                        href="form-pembelian.html" 
-                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
                 <div class="col-md-3 col-sm-6 mb-4">
@@ -176,9 +154,6 @@
                         <img src="image/produk8.jpeg" alt="Produk 5" class="img-fluid">
                         <h5>Pentens FLESEAL T-200H</h5>
                         <p><b>Rp. 1,200,000,-</b></p>
-                        <a class="btn btn-primary beli-sekarang" 
-                        href="form-pembelian.html" 
-                        data-name="Sikagrout 215" >Beli Sekarang</a>
                     </div>
                 </div>
 

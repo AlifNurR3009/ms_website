@@ -45,7 +45,6 @@ class PembelianController extends Controller
             'id_produk' => $request->input('id_produk'),
             'tanggal_pembelian' => now(),
             'total_harga' => $total_harga,
-            'status_pembelian' => 'Pending',  // Status pembelian
         ]);
 
         return redirect()->route('home')->with('success', 'Pembelian berhasil!');
